@@ -10,6 +10,7 @@ The structure for the cache itself will be implemented as a list
 Each entry of the cache will hold data
 struct cache_entry
 {
+
   uint8_t data[size of sector];
   
   disk_sector_t sector;
@@ -46,4 +47,8 @@ This function is called periodically, or when the system is halted.
 When trying to read from a disk sector, and when it is a cold read, read the furthur disk sector and insert it into the cache
 
 
+##cache.h
+
+struct list buffer_cache;
+struct lock buffer_cache_lock;
 
